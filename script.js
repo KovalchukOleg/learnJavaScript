@@ -34,7 +34,13 @@ for (let i = 0; i < 2; i++){
     const a = prompt("Один із останніх переглянутих фільмів", ''),
           b = prompt("На скільки його оцінюєте",'');
           
-    personalMovieDB.movies[a] = b;
+          if (a != null && b != null && a != '' && b !='' && a.length < 50){
+            personalMovieDB.movies[a] = b;
+            console.log('Done');
+          } else {
+            console.log('error');
+            i--;
+          }
 }
 
 console.log(personalMovieDB);
