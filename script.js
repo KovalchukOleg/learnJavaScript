@@ -61,13 +61,13 @@ detectPersonalLevel: function() {
         }
     },
 
-    toggleVisibleMyDB: function{
+    toggleVisibleMyDB: function() {
         if (personalMovieDB.private){
             personalMovieDB.private = false;
         }else{
             personalMovieDB.private = true;
         }
-    }
+    },
 
     writeYourGenres:function() {
         for (let i=1; i<=3; i++) {
