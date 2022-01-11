@@ -69,11 +69,32 @@ detectPersonalLevel: function() {
         }
     },
 
-    writeYourGenres:function() {
-        for (let i=1; i<=3; i++) {
-            const genre = prompt(`Ваш любимый жанр под номером ${i}`);
-            personalMovieDB.ganres[i-1] = genre;
-        };
+    writeYourGenres: function() {
+        for (let i=1; i<2; i++) {
+        //     let genre = prompt(`Ваш любимый жанр под номером ${i}`);
+            
+        //     if (genre === '' || genre == null){
+        //         console.log('Ви ввели  некоректні дані');
+        //         i--;
+        //     } else {
+        //         personalMovieDB.ganres[i - 1] = genre;
+        //     }
+        // };
+
+        let genres = prompt('Введіть ваші любимі жанри через кому');
+        if (genres === '' || genres == null){
+                    console.log('Ви ввели  некоректні дані');
+                    i--;
+                } else {
+                    personalMovieDB.genres = genres.split(', ');
+                    personalMovieDB.genres.sort();
+                }
+            }
+
+
+        personalMovieDB.genres.forEach((item, i) => {
+        console.log(`Любимый жанр ${i + 1} - это ${item}`);
+         });
     }
 
 };
